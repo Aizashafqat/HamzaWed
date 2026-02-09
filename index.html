@@ -1,248 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hamza's Barat Celebration</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-<style>
-    /* --- RESET & GLOBAL --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation for Aleesha</title>
     
-    body { 
-        font-family: 'Playfair Display', serif; 
-        background: #000; 
-        color: #fff;
-        overflow: hidden; 
-    }
-
-    /* --- THE COVER SCREEN --- */
-    #cover {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-        background-color: #2c0404;
-        overflow: hidden;
-        color: #fff; z-index: 1000;
-        display: flex; flex-direction: column; justify-content: space-between;
-        padding: 40px 25px 80px 25px; 
-        transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-    }
-
-    /* Blurred Background Image */
-    #cover::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: linear-gradient(rgba(44, 4, 4, 0.5), rgba(44, 4, 4, 0.5)), url('pic.jpg');
-        background-size: cover;
-        background-position: center;
-        filter: blur(5px);
-        transform: scale(1.05);
-        z-index: -1; 
-    }
-
-    .bottom-row { 
-        display: flex; 
-        justify-content: center; 
-        width: 100%;
-        margin-bottom: 20px; 
-    }
-    .top-row {
-        display: flex; justify-content: space-between; align-items: center;
-        font-family: 'Lato', sans-serif; text-transform: uppercase;
-        font-size: 0.75rem; letter-spacing: 2px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-        padding-bottom: 15px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }
-    .title-container { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    /* --- NEW STYLES FOR PROMINENT NAME --- */
-    .invitee-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .invitee-label {
-        display: block;
-        font-family: 'Lato', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-size: 0.9rem;
-        opacity: 0.9;
-        margin-bottom: 10px;
-    }
-    .invitee-name {
-        font-family: 'Playfair Display', serif;
-        font-size: 5rem;
-        font-weight: 400;
-        font-style: italic;
-        color: #d4af37;
-        line-height: 1;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-        margin: 0;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-    .big-title { font-size: 8vw; line-height: 1; font-weight: 400; letter-spacing: -2px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); text-align: center; }
-    .big-title span { display: block; font-style: italic; font-size: 5vw; opacity: 0.9; margin: 15px 0 0 0; }
-    
-    .enter-btn {
-        background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
-        color: #fff; border: 1px solid rgba(255,255,255,0.5); 
-        padding: 18px 45px; border-radius: 100px;
-        font-size: 0.9rem; font-family: 'Lato', sans-serif;
-        cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;
-        transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-    .enter-btn:hover { background: #fff; color: #5e0b0b; }
-    .slide-up { transform: translateY(-100%); }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper-green': '#5d7052',
+                        'paper-dark': '#3a4a31',
+                        'seal-cream': '#f2f0e6',
+                    },
+                    fontFamily: {
+                        'script': ['"Great Vibes"', 'cursive'],
+                        'engraved': ['"Cinzel Decorative"', 'serif'],
+                        'body': ['"Playfair Display"', 'serif'], 
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
 
-    /* --- SCROLL SNAP CONTAINER --- */
-    .snap-container {
-        height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory;
-        opacity: 0; transition: opacity 1s ease 0.6s;
-    }
-    .show-content { opacity: 1; }
+    <style>
+        /* =========================================
+           PART 1: COVER STYLES (Green Envelope)
+           ========================================= */
+        
+        .bg-texture {
+            background-color: #5d7052;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+        }
 
-    /* --- GENERIC SECTION STYLES --- */
-    section {
-        height: 100vh; width: 100%; scroll-snap-align: start;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        padding: 20px; position: relative; background-size: cover; background-position: center;
-    }
-    h2 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 400; line-height: 1.1; text-shadow: 0 2px 5px rgba(0,0,0,0.3); text-align: center; }
-    p { font-family: 'Lato', sans-serif; line-height: 1.6; font-size: 1rem; text-align: center; }
-    .divider { width: 60px; height: 1px; margin: 30px auto; opacity: 0.7; background: #fff; }
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%; 
+            height: 55vh;
+            background: linear-gradient(to bottom right, transparent 49%, rgba(0,0,0,0.3) 50%, transparent 51%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            pointer-events: none;
+            z-index: 10;
+        }
 
-    /* --- SECTION 1: INTRO --- */
-    #sec-intro {
-        background-color: #fdfbf7;
-        background-image: linear-gradient(rgba(253, 251, 247, 0.95), rgba(253, 251, 247, 0.95)), url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1920&auto=format&fit=crop');
-        color: #5e0b0b;
-    }
-    #sec-intro h2 { text-shadow: none; }
-    #sec-intro .unit-number { color: #5e0b0b; }
-    #sec-intro .divider { background: #5e0b0b; }
-    .countdown-wrapper { margin-top: 30px; }
-    #countdown { display: flex; justify-content: center; gap: 15px; margin-top: 20px;}
-    .time-unit { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
-    .unit-number { font-size: 2.2rem; font-weight: 500; font-variant-numeric: tabular-nums; }
-    .unit-label { font-family: 'Lato', sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
-    
-    /* --- SECTION 2: LOCATION --- */
-    #sec-location {
-        background-color: #333;
-        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1920&auto=format&fit=crop');
-        color: #fff;
-    }
-    .venue-card {
-        border: 1px solid rgba(255,255,255,0.5); padding: 40px;
-        background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
-        max-width: 450px; width: 100%; text-align: center;
-    }
+        .gold-lock {
+            background: conic-gradient(from 0deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c, #bf953f);
+            box-shadow: 
+                0 10px 25px rgba(0,0,0,0.5),
+                inset 2px 2px 5px rgba(255,255,255,0.7),
+                inset -2px -2px 5px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .gold-lock:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
 
-    /* --- SECTION 3: DRESS CODE --- */
-    #sec-dress-code {
-        background-color: #222;
-        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic3.jpg');
-    }
-    .glass-card {
-        background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
-        padding: 40px; border: 1px solid rgba(255, 255, 255, 0.2);
-        max-width: 550px; width: 100%; text-align: center; border-radius: 4px;
-    }
+        .text-engraved {
+            color: #745418;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5), -1px -1px 1px rgba(0,0,0,0.2);
+        }
 
-    /* --- SECTION 4: GUEST (Generic) --- */
-    #sec-guest {
-        background-color: #5e0b0b;
-        background-image: linear-gradient(rgba(60, 10, 10, 0.8), rgba(60, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1920&auto=format&fit=crop');
-        color: #fff;
-    }
-    .invite-card {
-        border: 1px solid rgba(255,255,255,0.3); padding: 40px 30px; width: 100%; max-width: 550px; position: relative; text-align: center;
-        background: rgba(0,0,0,0.3); backdrop-filter: blur(5px);
-    }
-    .invite-message { font-size: 1.5rem; display: block; line-height: 1.3; margin-bottom: 20px; color: #d4af37; text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-style: italic;}
+        .embossed-svg {
+            fill: none;
+            stroke: rgba(0,0,0,0.2);
+            stroke-width: 2;
+            filter: drop-shadow(1px 1px 0px rgba(255,255,255,0.15));
+        }
+        
+        .slide-up {
+            transform: translateY(-100%);
+            transition: transform 1.2s cubic-bezier(0.7, 0, 0.2, 1);
+        }
 
-    /* --- SECTION 5: TIMELINE --- */
-    #sec-timeline {
-        background-color: #1a1a1a;
-        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1920&auto=format&fit=crop');
-        color: #fff;
-    }
-    .timeline { position: relative; max-width: 500px; width: 100%; padding-left: 20px; text-align: left; }
-    .timeline::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 1px; background: rgba(255,255,255,0.3); }
-    .event-row { position: relative; margin-bottom: 35px; padding-left: 20px; }
-    .event-row::before { content: ''; position: absolute; left: -5px; top: 5px; width: 11px; height: 11px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 10px #d4af37;}
-    .event-time { font-family: 'Lato'; font-size: 0.8rem; color: #ccc; text-transform: uppercase; letter-spacing: 1px; }
-    .event-desc { font-size: 1.4rem; color: #fff; margin-top: 5px; font-weight: 400; }
+        /* =========================================
+           PART 2: CONTENT STYLES (Inner Pages)
+           ========================================= */
+        
+        body { 
+            font-family: 'Playfair Display', serif; 
+            background: #000; 
+            color: #fff;
+            overflow: hidden; 
+        }
 
-    /* --- SECTION 6: FAQS --- */
-    #sec-faq {
-        background-color: #f5f5f5;
-        background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1920&auto=format&fit=crop');
-        color: #5e0b0b;
-    }
-    #sec-faq h2 { text-shadow: none; }
-    .faq-grid { display: grid; gap: 20px; text-align: left; max-width: 500px; width: 100%; }
-    .faq-item { background: #fff; padding: 20px; border-left: 3px solid #5e0b0b; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .faq-q { font-family: 'Lato'; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
-    .faq-a { font-size: 0.9rem; color: #555; }
+        .snap-container {
+            height: 100vh; 
+            width: 100%;
+            overflow-y: scroll; 
+            scroll-snap-type: y mandatory;
+            opacity: 0; 
+            transition: opacity 1s ease 0.6s;
+        }
+        .show-content { opacity: 1; }
 
-    /* --- SECTION 7: FINAL MESSAGE --- */
-    #sec-final {
-        background-color: #000;
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1510133769068-070104928014?q=80&w=1920&auto=format&fit=crop');
-        color: #fff;
-    }
-    .final-card {
-        text-align: center;
-        max-width: 600px;
-    }
-    .final-card h2 { font-size: 4rem; font-style: italic; margin-bottom: 10px; color: #d4af37; }
-    .final-card p { font-size: 1.2rem; color: rgba(255,255,255,0.8); letter-spacing: 1px; }
+        section {
+            height: 100vh; width: 100%; scroll-snap-align: start;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 20px; position: relative; background-size: cover; background-position: center;
+        }
+        
+        h2 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 400; line-height: 1.1; text-shadow: 0 2px 5px rgba(0,0,0,0.3); text-align: center; }
+        p { font-family: 'Lato', sans-serif; line-height: 1.6; font-size: 1rem; text-align: center; }
+        .divider { width: 60px; height: 1px; margin: 30px auto; opacity: 0.7; background: #fff; }
 
-    .scroll-hint { position: absolute; bottom: 30px; font-size: 1.5rem; animation: float 2s infinite; opacity: 0.6; color: #5e0b0b;}
-    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(10px);} }
-</style>
+        /* --- SECTION 1: INTRO (UPDATED) --- */
+        #sec-intro {
+            background-color: #222;
+            /* CHANGED: Now uses pic.jpg with a dark overlay */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pic.jpg');
+            color: #fff;
+        }
+        #sec-intro h2 { text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        /* Changed numbers and divider to Gold so they show up on photo */
+        #sec-intro .unit-number { color: #d4af37; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        #sec-intro .divider { background: #d4af37; }
+        
+        .countdown-wrapper { margin-top: 30px; }
+        #countdown { display: flex; justify-content: center; gap: 15px; margin-top: 20px;}
+        .time-unit { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
+        .unit-number { font-size: 2.2rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+        .unit-label { font-family: 'Lato', sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #ccc; }
+        
+        /* --- SECTION 2: LOCATION --- */
+        #sec-location {
+            background-color: #333;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1920&auto=format&fit=crop');
+            color: #fff;
+        }
+        .venue-card {
+            border: 1px solid rgba(255,255,255,0.5); padding: 40px;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
+            max-width: 450px; width: 100%; text-align: center;
+        }
+
+        /* --- SECTION 3: DRESS CODE --- */
+        #sec-dress-code {
+            background-color: #222;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic3.jpg');
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            padding: 40px; border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 550px; width: 100%; text-align: center; border-radius: 4px;
+        }
+
+        /* --- SECTION 4: GUEST --- */
+        #sec-guest {
+            background-color: #5e0b0b;
+            background-image: linear-gradient(rgba(60, 10, 10, 0.8), rgba(60, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1920&auto=format&fit=crop');
+            color: #fff;
+        }
+        .invite-card {
+            border: 1px solid rgba(255,255,255,0.3); padding: 40px 30px; width: 100%; max-width: 550px; position: relative; text-align: center;
+            background: rgba(0,0,0,0.3); backdrop-filter: blur(5px);
+        }
+        .invite-message { font-size: 1.5rem; display: block; line-height: 1.3; margin-bottom: 20px; color: #d4af37; text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-style: italic;}
+
+        /* --- SECTION 5: TIMELINE --- */
+        #sec-timeline {
+            background-color: #1a1a1a;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1920&auto=format&fit=crop');
+            color: #fff;
+        }
+        .timeline { position: relative; max-width: 500px; width: 100%; padding-left: 20px; text-align: left; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 1px; background: rgba(255,255,255,0.3); }
+        .event-row { position: relative; margin-bottom: 35px; padding-left: 20px; }
+        .event-row::before { content: ''; position: absolute; left: -5px; top: 5px; width: 11px; height: 11px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 10px #d4af37;}
+        .event-time { font-family: 'Lato'; font-size: 0.8rem; color: #ccc; text-transform: uppercase; letter-spacing: 1px; }
+        .event-desc { font-size: 1.4rem; color: #fff; margin-top: 5px; font-weight: 400; }
+
+        /* --- SECTION 6: FAQS --- */
+        #sec-faq {
+            background-color: #f5f5f5;
+            background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1920&auto=format&fit=crop');
+            color: #5e0b0b;
+        }
+        #sec-faq h2 { text-shadow: none; }
+        .faq-grid { display: grid; gap: 20px; text-align: left; max-width: 500px; width: 100%; }
+        .faq-item { background: #fff; padding: 20px; border-left: 3px solid #5e0b0b; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-q { font-family: 'Lato'; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
+        .faq-a { font-size: 0.9rem; color: #555; }
+
+        /* --- SECTION 7: FINAL MESSAGE --- */
+        #sec-final {
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1510133769068-070104928014?q=80&w=1920&auto=format&fit=crop');
+            color: #fff;
+        }
+        .final-card { text-align: center; max-width: 600px; }
+        .final-card h2 { font-size: 4rem; font-style: italic; margin-bottom: 10px; color: #d4af37; }
+        .final-card p { font-size: 1.2rem; color: rgba(255,255,255,0.8); letter-spacing: 1px; }
+
+        .scroll-hint { position: absolute; bottom: 30px; font-size: 1.5rem; animation: float 2s infinite; opacity: 0.6; color: #d4af37;}
+        @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(10px);} }
+    </style>
 </head>
-<body>
+<body class="bg-black overflow-hidden h-screen w-full relative">
 
-    <div id="cover">
-        <div class="top-row">
-            <span>Wedding Invitation</span>
-            <span id="cover-date"></span>
-        </div>
-        <div class="title-container">
-            <div class="invitee-container">
-                <span class="invitee-label">To:</span>
-                <h1 class="invitee-name">Aleesha</h1>
+    <div id="cover" class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-texture overflow-hidden">
+        
+        <div class="envelope-flap"></div>
+        
+        <svg class="absolute top-10 -left-10 w-64 h-64 embossed-svg opacity-40 rotate-12" viewBox="0 0 100 100">
+            <path d="M50 50 Q30 20 50 5 M50 50 Q70 20 50 5 M50 50 Q20 40 10 50 M50 50 Q20 60 10 50 M50 50 Q80 40 90 50 M50 50 Q80 60 90 50 M50 50 Q40 80 50 95 M50 50 Q60 80 50 95" />
+        </svg>
+        <svg class="absolute bottom-10 -right-10 w-80 h-80 embossed-svg opacity-40 -rotate-12" viewBox="0 0 100 100">
+            <path d="M50 100 Q 50 10 50 10" />
+            <path d="M50 40 Q 20 20 30 10 Q 50 30 50 40" />
+            <path d="M50 60 Q 80 40 90 50 Q 60 70 50 60" />
+       </svg>
+
+        <div class="relative z-20 flex flex-col items-center w-full max-w-md px-6">
+            
+            <div class="text-center mb-10">
+                <p class="font-script text-3xl text-seal-cream/80 tracking-wide drop-shadow-md">
+                    Invitation for
+                </p>
+                <h2 class="font-script text-5xl text-white mt-2 drop-shadow-lg transform -rotate-2">
+                    Aleesha
+                </h2>
             </div>
 
-            <div class="big-title">
-                The Barat Ceremony
-                <span>Hamza's Celebration</span>
+            <div id="lock-btn" class="cursor-pointer group relative">
+                <div class="gold-lock w-36 h-36 rounded-full flex flex-col items-center justify-center relative animate-pulse-slow group-hover:animate-none">
+                    <div class="absolute inset-2 rounded-full border border-[#aa771c] opacity-30"></div>
+                    <div class="absolute inset-3 rounded-full border border-[#ffeb3b] opacity-40"></div>
+                    <h1 class="font-engraved text-4xl text-engraved pt-1">
+                        H<span class="text-2xl">&</span>A
+                    </h1>
+                    <div class="mt-2 w-3 h-5 bg-[#3a2805] rounded-t-full relative shadow-[inset_0_1px_3px_rgba(0,0,0,0.8)]">
+                        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#3a2805] rounded-full clip-triangle"></div>
+                    </div>
+                </div>
+                <p class="absolute -bottom-10 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-white/50 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Click to Unlock
+                </p>
             </div>
-        </div>
-        <div class="bottom-row">
-            <button class="enter-btn" id="enter-trigger">Open Invitation</button>
+
+             <p class="font-script text-2xl text-white/60 mt-16 text-center">
+                Prepared exclusively for you
+            </p>
         </div>
     </div>
 
-    <main class="snap-container" id="main-site">
+    <main class="snap-container hidden" id="main-content">
         
         <section id="sec-intro">
             <h2>A Joyous Occasion</h2>
             <div class="divider"></div>
-            <p style="color: #666;">Celebrating the Barat of Hamza.<br>We count the days until the festivities begin.</p>
+            <p style="color: #eee; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Celebrating the Barat of Hamza.<br>We count the days until the festivities begin.</p>
             <div class="countdown-wrapper">
                 <div id="countdown">
                     <div class="time-unit"><span class="unit-number" id="months">0</span><span class="unit-label">Months</span></div>
                     <div class="time-unit"><span class="unit-number" id="days">0</span><span class="unit-label">Days</span></div>
                     <div class="time-unit"><span class="unit-number" id="hours">0</span><span class="unit-label">Hours</span></div>
                     <div class="time-unit"><span class="unit-number" id="minutes">0</span><span class="unit-label">Mins</span></div>
-                    <div class="time-unit"><span class="unit-number" style="color: #999;" id="seconds">0</span><span class="unit-label">Secs</span></div>
+                    <div class="time-unit"><span class="unit-number" style="color: #ccc;" id="seconds">0</span><span class="unit-label">Secs</span></div>
                 </div>
             </div>
             <div class="scroll-hint">↓</div>
@@ -326,24 +354,22 @@
     </main>
 
     <script>
-        // CONFIG
-        const WEDDING_DATE = "March 29, 2026";
-        const COUNTDOWN_TARGET = "March 29, 2026 12:00:00"; 
-        
-        // APPLY
-        document.getElementById('cover-date').innerText = WEDDING_DATE.replace(",", "."); 
-
-        // ANIMATION
-        const btn = document.getElementById('enter-trigger');
+        const lockBtn = document.getElementById('lock-btn');
         const cover = document.getElementById('cover');
-        const site = document.getElementById('main-site');
+        const mainContent = document.getElementById('main-content');
 
-        btn.addEventListener('click', () => {
+        lockBtn.addEventListener('click', () => {
+            mainContent.classList.remove('hidden');
             cover.classList.add('slide-up');
-            site.classList.add('show-content');
+            setTimeout(() => {
+                mainContent.classList.add('show-content');
+            }, 50);
         });
 
         // COUNTDOWN LOGIC
+        const WEDDING_DATE = "March 29, 2026";
+        const COUNTDOWN_TARGET = "March 29, 2026 12:00:00"; 
+        
         const targetDate = new Date(COUNTDOWN_TARGET).getTime();
         function updateCountdown() {
             const now = new Date();
