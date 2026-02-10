@@ -88,7 +88,6 @@
         .info-value { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; letter-spacing: 0.5px; }
 
         /* --- SECTION STYLES --- */
-        /* INTRO USES pic3.jpg */
         #sec-intro { background-color: #222; background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pic.jpg'); color: #fff; }
         #sec-intro h2 { text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: #fff; }
         #sec-intro .unit-number { color: #d4af37; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
@@ -99,7 +98,6 @@
         .unit-number { font-size: 2.2rem; font-weight: 500; font-variant-numeric: tabular-nums; }
         .unit-label { font-family: 'Lato', sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #ccc; }
         
-        /* EVENTS USE pic.jpg */
         #sec-mehendi { background-color: #d8a800; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
         #sec-baraat { background-color: #800000; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
         #sec-waleema { background-color: #333; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
@@ -107,21 +105,19 @@
         /* --- FINAL SECTION STYLES (CORRECTED) --- */
         #sec-hosts {
             background-color: #1a1a1a;
-            /* CRITICAL FIX: "top center" forces faces to show. Gradient is transparent at top. */
             background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%), url('image_2.png');
             background-position: top center;
             background-size: cover;
-            /* Align content to the bottom */
             justify-content: flex-end;
-            padding-bottom: 12vw; /* Reduced bottom padding */
+            padding-bottom: 12vw; 
         }
         .hosts-container {
             background: rgba(0, 0, 0, 0.5); 
             backdrop-filter: blur(5px);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 20px; /* Smaller padding */
+            padding: 20px;
             border-radius: 8px;
-            max-width: 600px; /* Smaller width */
+            max-width: 780px; 
             width: 95%;
         }
         .host-name { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: #f2f0e6; margin-bottom: 4px; line-height: 1.2; }
@@ -184,7 +180,15 @@
                 <p class="italic mb-6 opacity-90">A vibrant night of colors, music, and festivities.</p>
                 <div class="info-group"><span class="info-label">Date & Time</span><div class="info-value">March 24, 2026 | 07:00 PM</div></div>
                 <div class="info-group"><span class="info-label">Venue</span><div class="info-value">Noor Mehal, Islamabad</div></div>
-            </div>
+                
+                <div class="mt-6 border-t border-gold-accent/20 pt-4">
+                    <span class="info-label">Young Hosts</span>
+                    <div class="info-value text-base leading-relaxed">
+                        <p>Fahad Abbasi &bull; Hashim &bull; Aryan &bull; Murtaza</p>
+                        <p>Yousaf &bull; Subhan &bull; Sultan &bull; Zain</p>
+                    </div>
+                </div>
+                </div>
         </section>
 
         <section id="sec-baraat">
