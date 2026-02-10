@@ -70,7 +70,6 @@
         p { font-family: 'Lato', sans-serif; line-height: 1.6; font-size: 1rem; text-align: center; }
         .divider { width: 60px; height: 1px; margin: 20px auto; opacity: 0.7; background: #fff; }
 
-        /* --- PRETTY CARD STYLES --- */
         .pretty-card {
             background: rgba(20, 20, 20, 0.65); backdrop-filter: blur(12px);
             border: 1px solid rgba(212, 175, 55, 0.3); padding: 50px 30px;
@@ -88,12 +87,11 @@
         .info-value { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; letter-spacing: 0.5px; }
 
         /* --- SECTION STYLES --- */
-        /* INTRO: MOVED TEXT DOWN BY 20% (padding-top: 20vh) */
         #sec-intro { 
             background-color: #222; 
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pic.jpg'); 
             color: #fff;
-            justify-content: flex-start; /* Alignment start to use padding */
+            justify-content: flex-start;
             padding-top: 60vh; 
         }
         #sec-intro h2 { text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: #fff; }
@@ -106,8 +104,8 @@
         .unit-label { font-family: 'Lato', sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #ccc; }
         
         #sec-mehendi { background-color: #d8a800; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pica.jpg'); }
-        #sec-baraat { background-color: #800000; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
-        #sec-waleema { background-color: #333; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
+        #sec-baraat { background-color: #800000; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('picb.jpg'); }
+        #sec-waleema { background-color: #333; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('picc.jpg'); }
 
         #sec-hosts {
             background-color: #1a1a1a;
@@ -189,7 +187,7 @@
                 
                 <div class="mt-6 border-t border-gold-accent/20 pt-4">
                     <span class="info-label">Young Hosts</span>
-                    <div class="info-value text-base leading-relaxed">
+                    <div style="transform: scale(0.85); transform-origin: center top; color: #fff; font-family: 'Playfair Display', serif; line-height: 1;">
                         <p>Fahad Abbasi &bull; Hashim &bull; Aryan &bull; Murtaza</p>
                         <p>Yousaf &bull; Subhan &bull; Sultan &bull; Zain</p>
                     </div>
