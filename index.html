@@ -88,7 +88,14 @@
         .info-value { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; letter-spacing: 0.5px; }
 
         /* --- SECTION STYLES --- */
-        #sec-intro { background-color: #222; background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pic.jpg'); color: #fff; }
+        /* INTRO: MOVED TEXT DOWN BY 20% (padding-top: 20vh) */
+        #sec-intro { 
+            background-color: #222; 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pic.jpg'); 
+            color: #fff;
+            justify-content: flex-start; /* Alignment start to use padding */
+            padding-top: 50vh; 
+        }
         #sec-intro h2 { text-shadow: 0 2px 10px rgba(0,0,0,0.8); color: #fff; }
         #sec-intro .unit-number { color: #d4af37; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         #sec-intro .divider { background: #d4af37; }
@@ -102,7 +109,6 @@
         #sec-baraat { background-color: #800000; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
         #sec-waleema { background-color: #333; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pic.jpg'); }
 
-        /* --- FINAL SECTION STYLES (CORRECTED) --- */
         #sec-hosts {
             background-color: #1a1a1a;
             background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%), url('image_2.png');
@@ -188,7 +194,7 @@
                         <p>Yousaf &bull; Subhan &bull; Sultan &bull; Zain</p>
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="sec-baraat">
